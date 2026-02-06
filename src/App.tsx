@@ -7,6 +7,10 @@ function App() {
 	const [count, setCount] = useState(0);
 	const [name, setName] = useState("");
 
+	const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+		setName(e.target.value);
+	};
+
 	return (
 		<>
 			<div>
@@ -23,7 +27,7 @@ function App() {
 				<p>
 					Edit <code>src/App.tsx</code> and save to test HMR
 				</p>
-				<input type="text" value={name} onChange={(e) => setName(e.target.value)} />
+				<input type="text" value={name} onChange={handleChange} />
 				<p>Name: {name}</p>
 			</div>
 			<p className="read-the-docs">Click on the Vite and React logos to learn more</p>
